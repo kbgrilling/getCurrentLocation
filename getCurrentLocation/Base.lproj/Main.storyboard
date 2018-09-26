@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="getCurrentLocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="nEB-0A-n5o" userLabel="Name Stack View">
+                                <rect key="frame" x="15" y="50" width="345" height="116.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your first and last name!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKX-8m-8bZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="FIRST NAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PYQ-94-Mjb" userLabel="firstName Text Field">
+                                        <rect key="frame" x="0.0" y="41.5" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="nextTextField" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="QeZ-Xf-e2J"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LAST NAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DwM-iJ-Ara" userLabel="lastName Text Field">
+                                        <rect key="frame" x="0.0" y="86.5" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="done" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="BpB-NS-OuE"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="olC-Zo-UwA" userLabel="Address Stack View">
+                                <rect key="frame" x="15" y="233" width="345" height="182"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CD7-KB-Yyk" userLabel="Street Address Text Field">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="gTn-N0-1Ou"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City, State Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbw-Rw-HRc" userLabel="City State Zip Text Field">
+                                        <rect key="frame" x="0.0" y="45" width="345" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWJ-Q5-rnh">
+                                        <rect key="frame" x="0.0" y="90" width="345" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="UKf-Re-zkr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGg-vu-fdw">
+                                        <rect key="frame" x="0.0" y="126" width="345" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="0DS-LI-PW7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88t-p0-3eh">
+                                        <rect key="frame" x="0.0" y="162" width="345" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="sSn-Gj-ovj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGf-2d-iJx">
+                                <rect key="frame" x="15" y="596" width="345" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonTouchDown" destination="BYZ-38-t0r" eventType="touchDown" id="CVA-7Y-B7o"/>
+                                    <action selector="submitButtonTouchUp" destination="BYZ-38-t0r" eventType="touchUpInside" id="ycb-a9-hhq"/>
+                                </connections>
+                            </button>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1B-RT-PDr">
+                                <rect key="frame" x="15" y="196.5" width="345" height="6.5"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nEB-0A-n5o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="2RQ-3f-eOU"/>
+                            <constraint firstItem="p1B-RT-PDr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-15" id="7u8-XS-QAB"/>
+                            <constraint firstItem="nEB-0A-n5o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="BqC-Jd-1z6"/>
+                            <constraint firstItem="p1B-RT-PDr" firstAttribute="top" secondItem="nEB-0A-n5o" secondAttribute="bottom" constant="30" id="Cn5-cu-S23"/>
+                            <constraint firstItem="nEB-0A-n5o" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-15" id="JNI-hP-fEw"/>
+                            <constraint firstItem="RGf-2d-iJx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Khg-Hg-FFM"/>
+                            <constraint firstItem="olC-Zo-UwA" firstAttribute="trailing" secondItem="RGf-2d-iJx" secondAttribute="trailing" id="MMF-iz-e9g"/>
+                            <constraint firstItem="olC-Zo-UwA" firstAttribute="leading" secondItem="RGf-2d-iJx" secondAttribute="leading" id="PLJ-WG-nDc"/>
+                            <constraint firstItem="RGf-2d-iJx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-30" id="Pek-L4-U3c"/>
+                            <constraint firstItem="olC-Zo-UwA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="233" id="hG7-Dq-AxL"/>
+                            <constraint firstItem="olC-Zo-UwA" firstAttribute="top" secondItem="p1B-RT-PDr" secondAttribute="bottom" constant="30" id="nl9-FD-I2y"/>
+                            <constraint firstItem="olC-Zo-UwA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-15" id="uhs-nz-gmh"/>
+                            <constraint firstItem="olC-Zo-UwA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="vsz-zt-TfS"/>
+                            <constraint firstItem="p1B-RT-PDr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="wqn-Cp-CBA"/>
+                            <constraint firstItem="RGf-2d-iJx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-15" id="y9J-0r-rdS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="88t-p0-3eh" id="CuK-Qo-3pF"/>
+                        <outlet property="addressTextField" destination="CD7-KB-Yyk" id="0SZ-H2-NtE"/>
+                        <outlet property="cityTextField" destination="bbw-Rw-HRc" id="8IY-ZA-2rL"/>
+                        <outlet property="firstNameTextField" destination="PYQ-94-Mjb" id="Lac-Na-Aje"/>
+                        <outlet property="instructionsLabel" destination="hKX-8m-8bZ" id="H2a-wG-Vmk"/>
+                        <outlet property="lastNameTextField" destination="DwM-iJ-Ara" id="F7k-Fa-pWn"/>
+                        <outlet property="latitudeLabel" destination="vWJ-Q5-rnh" id="c7g-E0-nFW"/>
+                        <outlet property="longitudeLabel" destination="RGg-vu-fdw" id="EAk-Zd-zWQ"/>
+                        <outlet property="spinnerContainerView" destination="p1B-RT-PDr" id="KZ5-iF-Tb1"/>
+                        <outlet property="submitButton" destination="RGf-2d-iJx" id="Jpc-6s-CyG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="29.23538230884558"/>
+        </scene>
+    </scenes>
+</document>
